@@ -1,26 +1,24 @@
 <template>
   <div id="create">
-    <button @click="openForm" v-show="!isCreating">
-      Add
+    <button @click="openForm" v-show="!isCreating" class="btn btn-primary">
+      Ajouter
     </button>
     <div v-show="isCreating">
       <div class="content">
+        <div class="card-body">
         <div class="form">
-          <label>Title</label>
+          <label>Titre</label>
           <input v-model="titleText" type="text" />
         </div>
-        <div class="form">
-          <label>Project</label>
-          <input v-model="projectText" type="text" />
-        </div>
         <div>
-          <button @click="sendForm">
-            Create
+          <button @click="sendForm" class="btn btn-sm btn-outline-secondary">
+            Créer
           </button>
-          <button @click="closeForm">
-            Cancel
+          <button @click="closeForm" class="btn btn-sm btn-outline-secondary">
+            Annuler
           </button>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -32,7 +30,6 @@ export default {
   data() {
     return {
       titleText: "",
-      projectText: "",
       isCreating: false,
     };
   },
@@ -44,16 +41,13 @@ export default {
       this.isCreating = false;
     },
     sendForm() {
-      if (this.titleText.length > 0 && this.projectText.length > 0) {
+      if (this.titleText.length > 0) {
         const title = this.titleText;
-        const project = this.projectText;
         this.$emit("creer-task", {
           title,
-          project,
           done: false,
         });
         this.titleText = "";
-        this.projectText = "";
         this.isCreating = false;
       }
     },

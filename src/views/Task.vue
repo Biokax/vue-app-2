@@ -20,23 +20,19 @@ export default {
     return {
       tasks: [
         {
-          title: "Task A",
-          project: "Project A",
+          title: "Sortir le chat",
           done: false,
         },
         {
-          title: "Task B",
-          project: "Project B",
-          done: true,
-        },
-        {
-          title: "Task C",
-          project: "Project C",
+          title: "Nourrir le chat",
           done: false,
         },
         {
-          title: "Task D",
-          project: "Project D",
+          title: "Tondre la pelouse",
+          done: false,
+        },
+        {
+          title: "Vider le lave vaisselle",
           done: false,
         },
       ],

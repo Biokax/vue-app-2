@@ -1,24 +1,5 @@
 <template>
-  <div>
-    <div class="header">
-      <p>
-        Completed Tasks:
-        {{
-          tasks.filter((task) => {
-            return task.done === true;
-          }).length
-        }}
-      </p>
-      <p>
-        Pending Tasks:
-        {{
-          tasks.filter((task) => {
-            return task.done === false;
-          }).length
-        }}
-      </p>
-    </div>
-    <div>
+    <div class="container">
       <task
         @delete-task="deleteTask"
         @complete-task="completeTask"
@@ -27,7 +8,6 @@
         :task="task"
       ></task>
     </div>
-  </div>
 </template>
 
 <script>
